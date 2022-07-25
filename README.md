@@ -9,9 +9,11 @@ In order to use the package, the following data is required:
 
 With the required data, the user can output the following analysis:
 
-* 
+* Regression parameter estimates from the proposed semi-supervised method, standard supervised learning, and density-ratio based estimation
+* Overall misclassification rate and Brier score estimates from the proposed semi-supervised method, standard supervised learning, and density-ratio based estimation
+* Standard error estimates for the regression parameter and model evaluation parameters
 
 
-Citation
+## Citation
 
 Gronsbell J, Liu M, Tian L, and Cai T.  Efficient evaluation of prediction rules in semi-supervised settings under stratified sampling.  Accepted at the Journal of the Royal Statisical Society: Series B. [link](https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12502)
