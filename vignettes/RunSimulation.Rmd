@@ -46,7 +46,7 @@ Three 'model_specification' settings from the supplement:
 - outcome_incorrect_imputation_incorrect_supp
 - gaussian_mixture
 
-```{r data}
+```{r data, warning=FALSE}
 # Generate data.
 new_data <- DataGeneration(n_lab, n_unlab, p, rho, signal = c(1, 1, 0.5, 0.5),
                            model_specification =
@@ -76,7 +76,7 @@ Three 'model_specification' settings from the supplement:
 - outcome_incorrect_imputation_correct_supp: basis_type <- 'IC1'
 - outcome_incorrect_imputation_incorrect_supp: basis_type <- 'II1'
 
-```{r basis_expansion}
+```{r basis_expansionv, warning=FALSE}
 num_knots <- 3
 basis_type <- 'NS_basis'
 if(basis_type == 'NS_basis'){
@@ -100,7 +100,7 @@ basis_unlabeled <- my_basis[(n_lab+1):nrow(my_basis), ]
 
 
 # Fit the regression model
-```{r fit_regression}
+```{r fit_regression, warning=FALSE}
 regression_result <- SemiSupervisedRegression(basis_labeled,
                                               basis_unlabeled,
                                               X_labeled,
@@ -125,7 +125,7 @@ proj_dr <- regression_result$proj_DR
 
 
 # Cross-validated residuals.
-```{r CV_residuals}
+```{r CV_residuals, warning=FALSE}
 num_folds <- 3
 cv_residuals <- CrossValResids(basis_labeled, basis_unlabeled, X_labeled,
                                X_unlabeled, y, samp_prob, num_folds)
@@ -180,7 +180,7 @@ beta_all <- cbind(beta_ssl, beta_mv, beta_sl, beta_dr, beta_naive)
 
 
 # Apparent accuracy estimates.
-```{r accuracy}
+```{r accuracy, warning=FALSE}
 my_threshold <- 0.5
 
 acc_sl <- SupervisedApparentAccuracy(X_labeled, y, beta_sl, samp_prob,
@@ -211,7 +211,7 @@ acc_ap_mse
 ```
 
 # Cross-validated accuracy estimates.
-```{r CV_accuracy}
+```{r CV_accuracy, warning=FALSE}
 reps <- 2 
 # reps is set to be low to run quickly as an example. We recommend 10-20.
 
@@ -231,7 +231,7 @@ acc_cv_mse
 
 
 # Ensemble of apparent and CV estimator.
-```{r}
+```{r, warning=FALSE}
 cv_weight <- num_folds / (2 * num_folds - 1)
 acc_en_omr <- cv_weight * acc_ap_omr + ((1-cv_weight) * acc_cv_omr)
 acc_en_mse <- cv_weight * acc_ap_mse + ((1-cv_weight) * acc_cv_mse)
@@ -242,7 +242,7 @@ acc_en_mse
 
 
 # Perturbation for standard error estimates for accuracy estimates.
-```{r}
+```{r, warning=FALSE}
 num_perts <- 2
 # num_perts is set to be low to run quickly as an example. We recommend 500.
 acc_pert <- AccuracyStdErrorEstimation(basis_labeled, basis_unlabeled,

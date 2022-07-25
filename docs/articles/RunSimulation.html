@@ -144,11 +144,6 @@
                                               <span class="va">y</span>,
                                               <span class="va">samp_prob</span>,
                                               lambda <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
 
 <span class="co"># Supervised beta.</span>
 <span class="va">beta_sl</span> <span class="op">&lt;-</span> <span class="va">regression_result</span><span class="op">$</span><span class="va">beta_SL</span>
@@ -170,25 +165,6 @@
 <code class="sourceCode R"><span class="va">num_folds</span> <span class="op">&lt;-</span> <span class="fl">3</span>
 <span class="va">cv_residuals</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/CrossValResids.html">CrossValResids</a></span><span class="op">(</span><span class="va">basis_labeled</span>, <span class="va">basis_unlabeled</span>, <span class="va">X_labeled</span>,
                                <span class="va">X_unlabeled</span>, <span class="va">y</span>, <span class="va">samp_prob</span>, <span class="va">num_folds</span><span class="op">)</span>
-<span class="co">#&gt; Warning in split.default(1:n_labeled, sample(rep(1:num_folds, floor(n_labeled/</span>
-<span class="co">#&gt; num_folds)))): data length is not a multiple of split variable</span>
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
 
 <span class="co"># Save the CV residuals.</span>
 <span class="va">resids_sl</span> <span class="op">&lt;-</span> <span class="va">cv_residuals</span><span class="op">$</span><span class="va">resids_beta_sl</span>
@@ -252,13 +228,6 @@
                                           <span class="va">y</span>, <span class="va">beta_mv</span>, <span class="va">gamma</span>, <span class="va">samp_prob</span>,
                                           resamp_weight <span class="op">=</span> <span class="cn">NULL</span>,
                                           threshold <span class="op">=</span> <span class="va">my_threshold</span><span class="op">)</span>
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
 
 <span class="va">acc_dr</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/SupervisedApparentAccuracy.html">SupervisedApparentAccuracy</a></span><span class="op">(</span><span class="va">X_labeled</span>, <span class="va">y</span>, <span class="va">beta_dr</span>, <span class="va">samp_prob</span>,
                                      resamp_weight <span class="op">=</span> <span class="cn">NULL</span>,
@@ -289,92 +258,6 @@
                            <span class="va">mv_weight</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>,
                            <span class="va">num_folds</span>, <span class="va">reps</span>,
                            <span class="va">my_threshold</span>, lambda0 <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-<span class="co">#&gt; Warning in split.default(1:n_labeled, sample(rep(1:num_folds, floor(n_labeled/</span>
-<span class="co">#&gt; num_folds)))): data length is not a multiple of split variable</span>
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-<span class="co">#&gt; Warning in split.default(1:n_labeled, sample(rep(1:num_folds, floor(n_labeled/</span>
-<span class="co">#&gt; num_folds)))): data length is not a multiple of split variable</span>
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
 
 <span class="va">acc_cv_omr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">acc_cv</span><span class="op">$</span><span class="va">omr_ssl</span>, <span class="va">acc_cv</span><span class="op">$</span><span class="va">omr_sl</span>, <span class="va">acc_cv</span><span class="op">$</span><span class="va">omr_dr</span>, <span class="va">acc_cv</span><span class="op">$</span><span class="va">omr_naive</span><span class="op">)</span>
 <span class="va">acc_cv_mse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">acc_cv</span><span class="op">$</span><span class="va">mse_ssl</span>, <span class="va">acc_cv</span><span class="op">$</span><span class="va">mse_sl</span>, <span class="va">acc_cv</span><span class="op">$</span><span class="va">mse_dr</span>, <span class="va">acc_cv</span><span class="op">$</span><span class="va">mse_naive</span><span class="op">)</span>
@@ -417,21 +300,6 @@
                                        <span class="va">beta_ssl_inv_info</span>,
                                        num_resamples <span class="op">=</span> <span class="va">num_perts</span>,
                                        threshold <span class="op">=</span> <span class="va">my_threshold</span><span class="op">)</span>
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
-
-<span class="co">#&gt; Warning in eval(family$initialize): non-integer #successes in a binomial glm!</span>
 
 <span class="co"># Save results.</span>
 <span class="va">ssl_pert_mse</span> <span class="op">&lt;-</span> <span class="va">acc_pert</span><span class="op">$</span><span class="va">ssl_pert_mse</span>
