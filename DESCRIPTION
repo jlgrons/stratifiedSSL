@@ -1,6 +1,6 @@
 Package: stratifiedSSL
-Title: Semi-supervised Learning under Stratified Sampling 
-Version: 0.1.0
+Title: Semi-Supervised Learning under Stratified Sampling 
+Version: 0.1.1
 Authors@R: c(
     person(given = "Jessica",
            family = "Gronsbell",
@@ -24,7 +24,7 @@ Authors@R: c(
            email = "clara-lea_bonzel@hms.harvard.edu"
            )
     )
-Description: Semi-supervised learning under stratified sampling. 
+Description: The stratifiedSSL R package performs semi-supervised learning under stratified sampling.  The package can fit a semi-supervised logistic regression model that has improved statitical efficiency over standard supervised logistic regression using an imputation-based approach leveraging weighted basis function regression. Reference can be found in Gronsbell J, Liu M, Tian L, and Cai T. (2022) doi:10.1111/rssb.12502.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
