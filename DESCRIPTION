@@ -1,6 +1,6 @@
 Package: stratifiedSSL
 Title: Semi-Supervised Learning under Stratified Sampling 
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: c(
     person(given = "Jessica",
            family = "Gronsbell",
@@ -43,3 +43,5 @@ Imports:
     randomForest,
     stepPlr,
     stats
+Depends: 
+    R (>= 2.10)

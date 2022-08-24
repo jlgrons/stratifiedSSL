@@ -19,62 +19,44 @@ knitr::opts_chunk$set(
 library(stratifiedSSL)
 ```
 
+# Load the simulated data.
 
-# Set desired parameters and seed for replication.
+The parameter used in this simulated data are the following:
+- n_lab = 400
+- n_unlab = 20000
+- p = 10
+- rho = 0.4
+- num_strata = 2
 
-```{r param}
-set.seed(92047)
+In this setting, we assume correct outcome and correct imputation.
 
+
+```{r data, warning=FALSE}
+
+# Parameters used for generating the simulated data
 n_lab <- 400
 n_unlab <- 20000
 p <- 10
 rho <- 0.4
 num_strata <- 2
-```
+
+# Load the simulated data.
+data(simulation_data)
 
 
-# Generate data.
+# Format the data.
+X_labeled <- simulation_data$covariates_lab
+X_unlabeled <- simulation_data$covariates_unlab
+S_unlabeled <- simulation_data$S_unlab
+S_labeled <- simulation_data$S_lab
+y <- simulation_data$Y_lab
+samp_prob <- simulation_data$samp_prob
 
-Three 'model_specification' settings from the main text:
-- outcome_correct_imputation_correct
-- outcome_incorrect_imputation_correct
-- outcome_incorrect_imputation_incorrect
-
-
-Three 'model_specification' settings from the supplement:
-- outcome_incorrect_imputation_correct_supp
-- outcome_incorrect_imputation_incorrect_supp
-- gaussian_mixture
-
-```{r data, warning=FALSE}
-# Generate data.
-new_data <- DataGeneration(n_lab, n_unlab, p, rho, signal = c(1, 1, 0.5, 0.5),
-                           model_specification =
-                             'outcome_correct_imputation_correct',
-                           num_strata = num_strata)
-
-# Format data.
-X_labeled <- new_data$covariates_lab
-X_unlabeled <- new_data$covariates_unlab
-S_unlabeled <- new_data$S_unlab
-S_labeled <- new_data$S_lab
-y <- new_data$Y_lab
-samp_prob <- new_data$samp_prob
 ```
 
 
 
 # Get basis expansion
-
-Three 'model_specification' settings from the main text:
-- outcome_correct_imputation_correct: basis_type <- 'NS_basis'
-- outcome_incorrect_imputation_correct: basis_type <- 'interact'
-- outcome_incorrect_imputation_incorrect: basis_type <- 'NS_basis'
-
-
-Three 'model_specification' settings from the supplement:
-- outcome_incorrect_imputation_correct_supp: basis_type <- 'IC1'
-- outcome_incorrect_imputation_incorrect_supp: basis_type <- 'II1'
 
 ```{r basis_expansionv, warning=FALSE}
 num_knots <- 3
@@ -100,6 +82,7 @@ basis_unlabeled <- my_basis[(n_lab+1):nrow(my_basis), ]
 
 
 # Fit the regression model
+
 ```{r fit_regression, warning=FALSE}
 regression_result <- SemiSupervisedRegression(basis_labeled,
                                               basis_unlabeled,
@@ -136,10 +119,10 @@ resids_ssl <- cv_residuals$resids_beta_ssl
 resids_dr <- cv_residuals$resids_beta_dr
 resids_gamma <- cv_residuals$resids_gamma
 
-# Save all the resids.
+# Save all the residuals.
 resids_all <- cbind(resids_ssl, resids_sl, resids_dr, resids_gamma)
 
-# Standard error estimates for supervised and SS estimates.
+# Standard error estimates for supervised and semi-supervised estimates.
 beta_sl_se_obj <- StdErrorEstimation(X_labeled, X_unlabeled, y,
                                      beta_sl, resids_sl)
 beta_ssl_se_obj <- StdErrorEstimation(X_labeled, X_unlabeled, y,
@@ -166,7 +149,7 @@ beta_minvar <- SemiSupervisedMinVarRegression(beta_ssl, beta_sl,
                                               X_unlabeled,
                                               epsilon = NULL)
 
-# Save result.
+# Save the results.
 beta_mv <- beta_minvar$beta_SSL_min_var
 mv_weight <- beta_minvar$min_var_weight
 beta_mv_se <- beta_minvar$se_beta_weight
@@ -174,7 +157,7 @@ beta_mv_se <- beta_minvar$se_beta_weight
 # Save all the standard errors.
 se_all <- cbind(beta_ssl_se,  beta_mv_se, beta_sl_se, beta_dr_se)
 
-# Save all the betas.
+# Save all the beta coefficients.
 beta_all <- cbind(beta_ssl, beta_mv, beta_sl, beta_dr, beta_naive)
 ```
 
