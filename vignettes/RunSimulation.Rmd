@@ -43,7 +43,6 @@ num_strata <- 2
 # Load the simulated data.
 data(simulation_data)
 
-
 # Format the data.
 X_labeled <- simulation_data$covariates_lab
 X_unlabeled <- simulation_data$covariates_unlab

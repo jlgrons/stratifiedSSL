@@ -8,7 +8,7 @@
 #' @export
 #' @return Matrix containing natural spline basis.
 #' @importFrom stats coef glm quantile rbeta rbinom rlogis rnorm
-#'
+#' 
 NaturalSplineBasis <- function(X, S, num_knots){
 
   X <- as.matrix(X)

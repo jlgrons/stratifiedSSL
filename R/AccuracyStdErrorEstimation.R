@@ -30,7 +30,7 @@ AccuracyStdErrorEstimation <- function(basis_labeled, basis_unlabeled,
                                        resids_beta_imp, resids_beta_dr,
                                        proj_dr, inverse_information,
                                        num_resamples = 500, threshold = 0.5){
-  set.seed(34)
+  # set.seed(34)
   n_labeled <- length(y)
   resamp_weight <- sapply(1:num_resamples, function(kk) 4*rbeta(n_labeled,
                                                               0.5, 1.5))
