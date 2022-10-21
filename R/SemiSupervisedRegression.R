@@ -9,7 +9,6 @@
 #' @param y Numeric outcome vector.
 #' @param samp_prob Numeric vector of weights.
 #' @param lambda Penalization parameter for initial ridge estimator.
-#' @export
 #' @return Vector containing regression coefficients.
 #' @importFrom stats coef glm quantile rbeta rbinom rlogis rnorm
 SemiSupervisedRegression <- function(basis_labeled, basis_unlabeled, X_labeled,
