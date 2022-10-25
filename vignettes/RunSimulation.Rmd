@@ -9,17 +9,18 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  warning = FALSE,
   collapse = TRUE,
   comment = "#>"
 )
 ```
 
-# Load the R package.
+# Load the R package
 ```{r setup}
 library(stratifiedSSL)
 ```
 
-# Load the simulated data.
+# Load the simulated data
 
 The parameter used in this simulated data are the following:
 - n_lab = 400
@@ -44,18 +45,35 @@ num_strata <- 2
 data(simulation_data)
 
 # Format the data.
+
+```
+
+```{r}
+# Format the data.
 X_labeled <- simulation_data$covariates_lab
 X_unlabeled <- simulation_data$covariates_unlab
 S_unlabeled <- simulation_data$S_unlab
 S_labeled <- simulation_data$S_lab
 y <- simulation_data$Y_lab
 samp_prob <- simulation_data$samp_prob
+basis_type <- 'NS_basis'
+reps = 2
+num_perts = 2
+num_knots <- 3
+basis_type <- 'NS_basis'
+my_threshold <- 0.5
 
 ```
 
+# Run the full analysis 
+```{r}
+stratifiedSSL_results <- RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob, n_lab,
+                                          num_knots, basis_type, num_folds, my_threshold, reps, num_perts)
 
+```
 
-# Get basis expansion
+# Detailed steps of the full analysis 
+## Get basis expansion
 
 ```{r basis_expansionv, warning=FALSE}
 num_knots <- 3
@@ -80,7 +98,7 @@ basis_unlabeled <- my_basis[(n_lab+1):nrow(my_basis), ]
 ```
 
 
-# Fit the regression model
+## Fit the regression model
 
 ```{r fit_regression, warning=FALSE}
 regression_result <- SemiSupervisedRegression(basis_labeled,
@@ -106,7 +124,7 @@ proj_dr <- regression_result$proj_DR
 ```
 
 
-# Cross-validated residuals.
+## Cross-validated residuals.
 ```{r CV_residuals, warning=FALSE}
 num_folds <- 3
 cv_residuals <- CrossValResids(basis_labeled, basis_unlabeled, X_labeled,
@@ -161,7 +179,7 @@ beta_all <- cbind(beta_ssl, beta_mv, beta_sl, beta_dr, beta_naive)
 ```
 
 
-# Apparent accuracy estimates.
+## Apparent accuracy estimates.
 ```{r accuracy, warning=FALSE}
 my_threshold <- 0.5
 
@@ -192,7 +210,7 @@ acc_ap_mse
 
 ```
 
-# Cross-validated accuracy estimates.
+## Cross-validated accuracy estimates.
 ```{r CV_accuracy, warning=FALSE}
 reps <- 2 
 # reps is set to be low to run quickly as an example. We recommend 10-20.
@@ -212,7 +230,7 @@ acc_cv_mse
 ```
 
 
-# Ensemble of apparent and CV estimator.
+## Ensemble of apparent and CV estimator.
 ```{r, warning=FALSE}
 cv_weight <- num_folds / (2 * num_folds - 1)
 acc_en_omr <- cv_weight * acc_ap_omr + ((1-cv_weight) * acc_cv_omr)
@@ -223,7 +241,7 @@ acc_en_mse
 ```
 
 
-# Perturbation for standard error estimates for accuracy estimates.
+## Perturbation for standard error estimates for accuracy estimates.
 ```{r, warning=FALSE}
 num_perts <- 2
 # num_perts is set to be low to run quickly as an example. We recommend 500.
