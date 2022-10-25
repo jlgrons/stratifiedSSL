@@ -23,10 +23,15 @@ library(stratifiedSSL)
 # Load the simulated data
 
 The parameter used in this simulated data are the following:
+
 - n_lab = 400
+
 - n_unlab = 20000
+
 - p = 10
+
 - rho = 0.4
+
 - num_strata = 2
 
 In this setting, we assume correct outcome and correct imputation.
@@ -44,8 +49,6 @@ num_strata <- 2
 # Load the simulated data.
 data(simulation_data)
 
-# Format the data.
-
 ```
 
 ```{r}
@@ -56,6 +59,7 @@ S_unlabeled <- simulation_data$S_unlab
 S_labeled <- simulation_data$S_lab
 y <- simulation_data$Y_lab
 samp_prob <- simulation_data$samp_prob
+
 basis_type <- 'NS_basis'
 reps = 2
 num_perts = 2
