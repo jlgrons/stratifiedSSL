@@ -13,6 +13,7 @@
 #' @param ind_est Optional numeric vector to indicate inds for refitting model.
 #' @param resamp_weight Numeric vector of resampling weights.
 #' @param threshold Threshold for overall misclassification rate.
+#' @export
 #' @return Semi-supervised MSE and OMR.
 #'
 SemiSupervisedApparentAccuracy <- function(basis_labeled, basis_unlabeled,
