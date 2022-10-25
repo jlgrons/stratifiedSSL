@@ -13,6 +13,7 @@
 #' @param reps Scalar indicating number of repitions for CV.
 #' @param threshold Threshold for overall misclassification rate.
 #' @param lambda0 Initial lambda for imputation model.
+#' @export
 #' @return CV semi-supervised and supervised MSE and OMR.
 #'
 # computes the CV estimates for model evaluation parameters

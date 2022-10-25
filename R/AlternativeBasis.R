@@ -7,6 +7,7 @@
 #' @param num_knots Number of knots.
 #' @param basis_type Type of basis to use.
 #' @return Matrix containing basis.
+#' @export
 AlternativeBasis <- function(X, S, num_knots, basis_type = 'interact'){
 
   if (basis_type == 'interact'){

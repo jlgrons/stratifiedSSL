@@ -11,6 +11,7 @@
 #' @param X_labeled Covariate matrix for labeled data set.
 #' @param X_unlabeled Covariate matrix for unlabeled data set.
 #' @param epsilon Small offset to help with numerical stability.
+#' @export
 #' @return List with parameter and SE est as well as estimated min_var_weights.
 #'
 SemiSupervisedMinVarRegression <- function(beta_SSL, beta_SL,

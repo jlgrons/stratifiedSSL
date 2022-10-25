@@ -16,5 +16,4 @@
 #' @name simulation_data
 #' @usage data(simulation_data)
 #' @format A list of parameters and vectors
-#' @export
 NULL
