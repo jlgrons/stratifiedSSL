@@ -9,7 +9,6 @@
 #' @param samp_prob Numeric vector of weights.
 #' @param resamp_weight Numeric vector of resampling weights.
 #' @param threshold Threshold for overall misclassification rate.
-#' @export
 #' @return Supervised MSE and OMR.
 #'
 SupervisedApparentAccuracy <- function(X_labeled, y, beta_SL, samp_prob,
