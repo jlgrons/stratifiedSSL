@@ -2,7 +2,12 @@
 
 export(DataGeneration)
 export(DensityRatioRegression)
+export(NaturalSplineBasis)
 export(RunStratifiedSSL)
+export(SemiSupervisedApparentAccuracy)
+export(SemiSupervisedMinVarRegression)
+export(SemiSupervisedRegression)
+export(StdErrorEstimation)
 export(StdErrorEstimationDR)
 import(MASS)
 import(evd)
