@@ -5,7 +5,6 @@
 #' @param X Covariate matrix.
 #' @param S Vector with stratum id.
 #' @param num_knots Number of knots.
-#' @export
 #' @return Matrix containing natural spline basis.
 #' @importFrom stats coef glm quantile rbeta rbinom rlogis rnorm
 #' 

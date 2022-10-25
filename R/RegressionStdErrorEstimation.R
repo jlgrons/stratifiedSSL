@@ -7,7 +7,6 @@
 #' @param y Numeric outcome vector.
 #' @param beta Regression parameter estimate to compute the score function.
 #' @param residual Estimated residual.
-#' @export
 #' @return Standard error estimate.
 #'
 StdErrorEstimation <- function(X_labeled, X_unlabeled, y, beta, residual){
