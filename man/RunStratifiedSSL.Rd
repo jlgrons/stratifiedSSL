@@ -21,7 +21,7 @@ RunStratifiedSSL(
 )
 }
 \arguments{
-\item{X_labeled}{matrixof n*p}
+\item{X_labeled}{matrix of n*p}
 
 \item{X_unlabeled}{matrix of N*p}
 
@@ -52,4 +52,25 @@ Perturbed estimates and corresponding residuals
 }
 \description{
 Runs the full analysis
+}
+\examples{
+data(simulation_data)
+n_lab <- 400
+n_unlab <- 20000
+p <- 10
+rho <- 0.4
+num_strata <- 2
+X_labeled <- simulation_data$covariates_lab
+X_unlabeled <- simulation_data$covariates_unlab
+S_unlabeled <- simulation_data$S_unlab
+S_labeled <- simulation_data$S_lab
+y <- simulation_data$Y_lab
+samp_prob <- simulation_data$samp_prob
+basis_type <- 'NS_basis'
+reps = 2
+num_perts = 2
+num_knots <- 3
+basis_type <- 'NS_basis'
+my_threshold <- 0.5
+RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob, n_lab)
 }

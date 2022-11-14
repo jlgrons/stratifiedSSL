@@ -19,7 +19,6 @@
 #' @param inverse_information Inverse information  matrix.
 #' @param num_resamples Number of resamples.
 #' @param threshold Threshold for over misclassification rate.
-#' @export
 #' @return Pertrubed estimates.
 #' @importFrom stats coef glm quantile rbeta rbinom rlogis rnorm
 AccuracyStdErrorEstimation <- function(basis_labeled, basis_unlabeled,

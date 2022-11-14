@@ -46,7 +46,6 @@ StratificationVar <- function(covariates, num_strata = 2){
 #' @param signal Values of nonzero regression parameters.
 #' @param model_specification Choice of model specification.
 #' @param num_strata Number of strata for stratified sampling.
-#' @export
 #' @return List of relevant data objects.
 DataGeneration <- function(n_lab, n_unlab, p, rho, signal = c(1, 1, 0.5, 0.5),
                      model_specification = 'outcome_correct_imputation_correct',
