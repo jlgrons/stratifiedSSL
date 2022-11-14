@@ -10,7 +10,6 @@
 #' @param samp_prob Numeric vector of weights.
 #' @param num_folds Number of folds for cross-validation.
 #' @param lambda Regularization parameter for the imputation model.
-#' @export
 #' @return Cross-validated residuals.
 #'
 

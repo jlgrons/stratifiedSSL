@@ -36,7 +36,6 @@ Newton_DR <- function(phi.t, phi.v, weights,
 #' @param y Numeric outcome vector_
 #' @param samp_prob Numeric vector of weights_
 #' @param lambda Penalization parameter for initial ridge estimator_
-#' @export
 #' @return Vector containing regression coefficients_
 #'
 DensityRatioRegression <- function(basis_labeled, basis_unlabeled, X_labeled,

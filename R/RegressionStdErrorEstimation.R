@@ -7,7 +7,6 @@
 #' @param y Numeric outcome vector.
 #' @param beta Regression parameter estimate to compute the score function.
 #' @param residual Estimated residual.
-#' @export
 #' @return Standard error estimate.
 #'
 StdErrorEstimation <- function(X_labeled, X_unlabeled, y, beta, residual){
@@ -43,7 +42,6 @@ StdErrorEstimation <- function(X_labeled, X_unlabeled, y, beta, residual){
 #' @param beta_dr DR regression parameter estimate to compute the score function.
 #' @param resid Estimated residual.
 #' @param proj_dr DR projection.
-#' @export
 #' @return Standard error estimate for DR method.
 #'
 #'
