@@ -13,6 +13,11 @@ With the required data, the user can output the following analysis:
 * Overall misclassification rate and Brier score estimates from the proposed semi-supervised method, standard supervised learning, and density-ratio based estimation
 * Standard error estimates for the regression parameter and model evaluation parameters
 
+## Installation
+
+```{R, eval = FALSE}
+devtools::install_github(repo = "https://github.com/jlgrons/stratifiedSSL")
+```
 
 ## Citation
 
