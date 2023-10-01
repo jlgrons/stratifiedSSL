@@ -22,23 +22,7 @@ library(stratifiedSSL)
 
 # Load the simulated data
 
-The parameter used in this simulated data are the following:
-
-- n_lab = 400
-
-- n_unlab = 20000
-
-- p = 10
-
-- rho = 0.4
-
-- num_strata = 2
-
-In this setting, we assume correct outcome and correct imputation.
-
-
 ```{r data, warning=FALSE}
-
 # Parameters used for generating the simulated data
 n_lab <- 400
 n_unlab <- 20000
