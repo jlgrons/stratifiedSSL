@@ -18,7 +18,7 @@
 # computes the CV estimates for model evaluation parameters
 CrossValAccuracy <- function(basis_labeled, basis_unlabeled,
                               X_labeled, X_unlabeled, y, samp_prob,
-                              min_var_weight, num_folds = 3, reps = 10,
+                              min_var_weight, num_folds = 5, reps = 10,
                               threshold = 0.5, lambda0 = NULL){
 
   pp <- ncol(basis_labeled)
