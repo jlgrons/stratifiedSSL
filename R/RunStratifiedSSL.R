@@ -80,7 +80,7 @@ RunStratifiedSSL <- function(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, 
   # DR projection.
   proj_dr <- regression_result$proj_DR
   
-  num_folds <- 3
+
   cv_residuals <- CrossValResids(basis_labeled, basis_unlabeled, X_labeled,
                                  X_unlabeled, y, samp_prob, num_folds)
   
