@@ -18,7 +18,7 @@ With the required data, the user can output the following analysis:
 ```{R, eval = FALSE}
 devtools::install_github(repo = "https://github.com/jlgrons/stratifiedSSL")
 ```
-An example of how to use the package can be found [here](jlgrons.github.io/stratifiedSSL/).
+An example of how to use the package can be found [here](https://jlgrons.github.io/stratifiedSSL/).
 ## Citation
 
 Gronsbell J, Liu M, Tian L, and Cai T.  Efficient evaluation of prediction rules in semi-supervised settings under stratified sampling.  Accepted at the Journal of the Royal Statisical Society: Series B. [link](https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12502)
