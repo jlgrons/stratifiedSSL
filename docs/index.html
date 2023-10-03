@@ -43,7 +43,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -70,44 +70,23 @@
 <div class="section level1">
 <div class="page-header"><h1 id="stratifiedssl">stratifiedSSL<a class="anchor" aria-label="anchor" href="#stratifiedssl"></a>
 </h1></div>
-<p>The stratifiedSSL R package performs semi-supervised learning under
-stratified sampling. The package can fit a semi-supervised logistic
-regression model that has improved statistical efficiency over standard
-supervised logistic regression using an imputation-based approach
-leveraging weighted basis function regression. The package also performs
-semi-supervised model evaluation with respect to the overall
-misclassification rate and Brier score to yield consistent estimates for
-the population parameters with lower variation than their supervised
-counterparts. In addition to estimation procedures, cross-validation
-based inference derived from the influence function expansion for the
-regression parameter are available as well as a cross-validated
-perturbation resampling procedure for the model evaluation
-parameters.</p>
+<p>The stratifiedSSL R package performs semi-supervised learning under stratified sampling. The package can fit a semi-supervised logistic regression model that has improved statistical efficiency over standard supervised logistic regression using an imputation-based approach leveraging weighted basis function regression. The package also performs semi-supervised model evaluation with respect to the overall misclassification rate and Brier score to yield consistent estimates for the population parameters with lower variation than their supervised counterparts. In addition to estimation procedures, cross-validation based inference derived from the influence function expansion for the regression parameter are available as well as a cross-validated perturbation resampling procedure for the model evaluation parameters.</p>
 <p>In order to use the package, the following data is required:</p>
 <ul>
-<li>A labeled data set with information on both the covariates and the
-outcome of interest</li>
-<li>An unlabeled data set with information on only the covariates, which
-is of much larger size than the labeled dataset</li>
+<li>A labeled data set with information on both the covariates and the outcome of interest</li>
+<li>An unlabeled data set with information on only the covariates, which is of much larger size than the labeled dataset</li>
 </ul>
-<p>With the required data, the user can output the following
-analysis:</p>
+<p>With the required data, the user can output the following analysis:</p>
 <ul>
-<li>Regression parameter estimates from the proposed semi-supervised
-method, standard supervised learning, and density-ratio based
-estimation</li>
-<li>Overall misclassification rate and Brier score estimates from the
-proposed semi-supervised method, standard supervised learning, and
-density-ratio based estimation</li>
-<li>Standard error estimates for the regression parameter and model
-evaluation parameters</li>
+<li>Regression parameter estimates from the proposed semi-supervised method, standard supervised learning, and density-ratio based estimation</li>
+<li>Overall misclassification rate and Brier score estimates from the proposed semi-supervised method, standard supervised learning, and density-ratio based estimation</li>
+<li>Standard error estimates for the regression parameter and model evaluation parameters</li>
 </ul>
 <div class="section level2">
-<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Gronsbell J, Liu M, Tian L, and Cai T. Efficient evaluation of
-prediction rules in semi-supervised settings under stratified sampling.
-Accepted at the Journal of the Royal Statisical Society: Series B. <a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12502" class="external-link">link</a></p>
+<p><code>{R, eval = FALSE} devtools::install_github(repo = "https://github.com/jlgrons/stratifiedSSL")</code> An example of how to use the package can be found <a href="https://jlgrons.github.io/stratifiedSSL/" class="external-link">here</a>. ## Citation</p>
+<p>Gronsbell J, Liu M, Tian L, and Cai T. Efficient evaluation of prediction rules in semi-supervised settings under stratified sampling. Accepted at the Journal of the Royal Statisical Society: Series B. <a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12502" class="external-link">link</a></p>
 </div>
 </div>
   </div>
@@ -148,14 +127,12 @@ Accepted at the Journal of the Royal Statisical Society: Series B. <a href="http
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Jessica Gronsbell, Molei Liu, Lu Tian, Tianxi Cai,
-Clara-Lea Bonzel.</p>
+<p>Developed by Jessica Gronsbell, Molei Liu, Lu Tian, Tianxi Cai, Clara-Lea Bonzel.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

@@ -18,8 +18,9 @@ test_that("The full stratifiedSSL analysis works", {
   num_knots <- 3
   basis_type <- 'NS_basis'
   my_threshold <- 0.5
+  num_folds = 3
   
-  stratifiedSSL_results <- RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob, n_lab,
+  stratifiedSSL_results <- RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob,
                                             num_knots, basis_type, num_folds, my_threshold, reps, num_perts)
   expect_equal(round(stratifiedSSL_results[["dr_pert_omr"]][1],1), 0.1)
 })

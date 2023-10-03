@@ -12,7 +12,7 @@ CrossValAccuracy(
   y,
   samp_prob,
   min_var_weight,
-  num_folds = 3,
+  num_folds = 5,
   reps = 10,
   threshold = 0.5,
   lambda0 = NULL

@@ -6,7 +6,6 @@
 #' @param S_unlabeled matrix of N*1
 #' @param y Numeric outcome vector
 #' @param samp_prob vector n*1
-#' @param n_lab integer
 #' @param num_knots number of knots for basis expansion (default is 3)
 #' @param basis_type type of basis to use (default is 'NS_basis')
 #' @param num_folds number of folds for cross-validations (default is 3)
@@ -17,7 +16,6 @@
 #' @export
 #' @examples
 #' data(simulation_data)
-#' n_lab <- 400
 #' n_unlab <- 20000
 #' p <- 10
 #' rho <- 0.4
@@ -34,12 +32,12 @@
 #' num_knots <- 3
 #' basis_type <- 'NS_basis'
 #' my_threshold <- 0.5
-#' RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob, n_lab)
+#' RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob)
 
-RunStratifiedSSL <- function(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob, n_lab,
+RunStratifiedSSL <- function(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob,
                              num_knots = 3, basis_type = 'NS_basis', num_folds = 3, my_threshold = 0.5, reps = 10, num_perts = 500){
   
-  
+  n_lab = nrow(X_labeled)
   # Get basis expansion
   if(basis_type == 'NS_basis'){
     

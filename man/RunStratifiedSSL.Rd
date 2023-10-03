@@ -11,7 +11,6 @@ RunStratifiedSSL(
   S_unlabeled,
   y,
   samp_prob,
-  n_lab,
   num_knots = 3,
   basis_type = "NS_basis",
   num_folds = 3,
@@ -33,8 +32,6 @@ RunStratifiedSSL(
 
 \item{samp_prob}{vector n*1}
 
-\item{n_lab}{integer}
-
 \item{num_knots}{number of knots for basis expansion (default is 3)}
 
 \item{basis_type}{type of basis to use (default is 'NS_basis')}
@@ -55,7 +52,6 @@ Runs the full analysis
 }
 \examples{
 data(simulation_data)
-n_lab <- 400
 n_unlab <- 20000
 p <- 10
 rho <- 0.4
@@ -72,5 +68,5 @@ num_perts = 2
 num_knots <- 3
 basis_type <- 'NS_basis'
 my_threshold <- 0.5
-RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob, n_lab)
+RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, S_unlabeled, y, samp_prob)
 }

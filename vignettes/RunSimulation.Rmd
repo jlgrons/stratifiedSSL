@@ -56,7 +56,7 @@ num_folds <- 3
 # Run the full analysis 
 ```{r}
 stratifiedSSL_results <- RunStratifiedSSL(X_labeled, X_unlabeled, S_labeled, 
-                                          S_unlabeled, y, samp_prob, n_lab,
+                                          S_unlabeled, y, samp_prob,
                                           num_knots, basis_type, num_folds, 
                                           my_threshold, reps, num_perts)
 
